@@ -21,6 +21,18 @@ services:
         sync: false
       - key: JWT_EXPIRES_IN
         value: 7d
+      - key: TEACHER_SERIAL_PEPPER
+        value: VPR_Music_Center_2024_Secure_Pepper
+
+  - type: web
+    name: player-pro-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false
 
 databases:
   - name: player-pro-db

@@ -20,13 +20,16 @@ This guide will help you deploy Player Pro to Render.
 
 1. Go to Render Dashboard → New → Web Service
 2. Connect your GitHub repository
-3. Configure the service:
+3. **IMPORTANT**: In the service settings, set **Root Directory** to `backend`
+4. Configure the service:
    - **Name**: `player-pro-backend`
-   - **Root Directory**: `backend`
+   - **Root Directory**: `backend` ⚠️ **MUST BE SET**
    - **Environment**: `Node`
    - **Build Command**: `npm install`
    - **Start Command**: `npm start`
    - **Plan**: Starter (or higher)
+
+**Note**: If you're using the `render.yaml` file, make sure it's in the root of your repository and the `rootDir: backend` is specified.
 
 4. Add Environment Variables:
    ```
